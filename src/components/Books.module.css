@@ -1,0 +1,51 @@
+li{
+      background-color: #282c34;
+      border-radius: 8px;
+      padding: 5px;
+      margin: 0px;
+      min-width: 150px;
+}
+
+
+li h2{
+      text-align: center;
+      pointer-events: none;
+}
+
+li p{
+      pointer-events: none;
+}
+
+
+
+@media screen and (max-width: 1193px) {
+      li{
+            font-size: 15px;
+      }
+
+      li h2{
+            font-size: 25px;
+      }
+  }
+  
+
+  @media screen and (max-width: 950px) {
+      li{
+            font-size: 10px;
+      }
+
+      li h2{
+            font-size: 15px;
+      }
+  }
+  
+
+  @media screen and (max-width: 610px) {
+      li{
+            font-size: 8px;
+      }
+
+      li h2{
+            font-size: 13px;
+      }
+  }
