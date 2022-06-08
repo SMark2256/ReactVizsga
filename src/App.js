@@ -33,7 +33,7 @@ const booksElements = [
   return (
     <React.Fragment>
       <section>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
