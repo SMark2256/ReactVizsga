@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React, {useState,useEffect,useCallback} from 'react'
 
 import BooksList from './components/BooksList'
@@ -8,7 +9,7 @@ function App() {
 const [foods, setFoods] = useState([])
 const [isLoading, setLoading] = useState(false)
 const [show, setShow] = useState(true)
-const [foodtype, setFoodtype] = useState('best-foods')
+const [foodtype, setFoodtype] = useState('drinks')
 
 const fetchMoviesHandler = useCallback( async () => {
   setLoading(true);
@@ -65,20 +66,29 @@ useEffect(() => {
             </header>
           </div>
       </section>
-      <section>
-                <button className="btn-lg mx-4 btn-primary" onClick={fetchMoviesHandler}>Fetch Movies</button>
-                <button className="btn-lg mx-4 btn-primary" onClick={() => setShow(!show)}>Show/Hide</button>
-            </section>
-            <section>
-            <button className="btn mx-2  btn-success" onClick={() => setFoodtype('burgers')}>Hamburger</button>
-            <button className="btn mx-2  btn-success" onClick={() => setFoodtype('drinks')}>Drinks</button>
-            <button className="btn mx-2  btn-success" onClick={() => setFoodtype('pizzas')}>Pizza</button>
-            </section>
-            <section>
-                {foodtype &&show && !isLoading && foods.length > 0 && <BooksList foods={foods}/>}
-                {show && !isLoading && foods.length === 0 && <p>Found no movies</p>}
-                {isLoading && <p>Loading...</p>}
-            </section>
+      <div className='nav'>
+        <div className="container">
+        <div className="row">
+          <h1>Our Foods</h1>
+        </div>
+        <div className="d-inline col-12">
+        <section>
+          <button className="btn-lg mx-2 btn-primary" onClick={fetchMoviesHandler}>Fetch Movies</button>
+          <button className="btn-lg mx-2 btn-primary" onClick={() => setShow(!show)}>Show/Hide</button>
+        </section>
+        <section>
+          <button className="btn-lg mx-2  btn-success" onClick={() => setFoodtype('burgers')}>Hamburger</button>
+          <button className="btn-lg mx-2  btn-success" onClick={() => setFoodtype('drinks')}>Drinks</button>
+          <button className="btn-lg mx-2  btn-success" onClick={() => setFoodtype('pizzas')}>Pizza</button>
+        </section>
+        </div>
+        </div>
+      </div>
+      <section className='foodtable'>
+        {foodtype &&show && !isLoading && foods.length > 0 && <BooksList foods={foods}/>}
+        {show && !isLoading && foods.length === 0 && <p>Found no movies</p>}
+        {isLoading && <p>Loading...</p>}
+    </section>
     </React.Fragment>
   );
 }

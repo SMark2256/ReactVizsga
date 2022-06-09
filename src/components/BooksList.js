@@ -9,7 +9,7 @@ const BooksList = (props) => {
       
 
   return (
-      <ul className="row col-lg-11">
+      <ul className="row col-lg-10">
             {props.foods.map((foods) => (
                   <Foods
                         key={foods.id}

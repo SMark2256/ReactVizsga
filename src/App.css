@@ -1,6 +1,6 @@
 
 .App-logo {
-  height: 10vmin;
+  height: 6vh;
   pointer-events: none;
 }
 
@@ -10,12 +10,40 @@
   }
 }
 
+.nav{
+  height: 350px;
+  justify-content: center;
+  background-color: rgba(20, 20, 60, 0.1);
+  border-bottom: 3px solid;
+  border-bottom-color: rgba(20, 20, 60, 0.1);
+  background-image: url("https://food-g-app.web.app/static/media/banner.10879cd6.jpg");
+}
+
+.nav section{
+  padding-top: 30px;
+}
+
+
+.nav h1{
+  font-size: 50px;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.foodtable{
+  justify-content: center;
+  padding-left: 15%;
+  margin-top: 40px;
+}
+
 .App-header {
+  background-color: rgba(20, 40, 50, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 @keyframes App-logo-spin {
