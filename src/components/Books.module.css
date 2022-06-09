@@ -1,21 +1,66 @@
 li{
-      background-color: #282c34;
+      background-color: rgba(20, 20, 60, 0.6);
       border-radius: 8px;
       padding: 5px;
       margin: 0px;
-      min-width: 150px;
+      min-height: 400px;
+      font-size: 15px;
+      margin-bottom: 20px;
 }
 
+.pricetag{
+      font-size: 20px;
+      font-weight: bold;
+}
 
 li h2{
+      margin: 10px;
       text-align: center;
       pointer-events: none;
+      font-size: 22px;
+      font-weight: bold;
 }
 
 li p{
       pointer-events: none;
 }
 
+.rankingstar{
+      position: relative;
+}
+
+.rankingstar div{
+      position: absolute;
+      padding-right: 30%;
+      font-size: 20px;
+      z-index: 2;
+      top: 170px; 
+      left: 22%; 
+      width: 100%; 
+}
+
+.rankingstaricon{
+      background-color: rgba(20, 20, 20, 0.3);
+      width: 60px;
+}
+
+.heart{
+      background: rgba(255, 255, 255, 0);
+      border: 0px;
+}
+
+.cart{
+      background-image: linear-gradient(90deg, rgba(9,120,220,1) 35%, rgba(0,212,255,1) 100%);
+      width: 60px;
+      height: 35px;
+      border: 0px;
+      border-radius: 10px;
+      margin-left: 50%;
+}
+
+.carticon{
+      color: white;
+}
 
 
 @media screen and (max-width: 1193px) {

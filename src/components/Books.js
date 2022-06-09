@@ -1,18 +1,28 @@
 import React from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './Books.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping,faHeartCircleCheck,faRankingStar } from '@fortawesome/free-solid-svg-icons'
+import classes from './Books.module.css'
 
-const Books = (props) => {
+const Foods = (props) => {
   return (
-        <div className="col-4 book">
-        <li className="col-11 book">
-              <h2>{props.title}</h2>
-              <h2>Kiadás: {props.date}</h2>
-              <p>Pages: {props.pages}</p>
+        <div className="col-2">
+        <li className="col-12">
+              <h2>{props.name}</h2>
+              <div className={classes.rankingstar}>
+              <img src={props.img} height="200" width="200"/>
+              <div><p className={classes.rankingstaricon}><FontAwesomeIcon icon={faRankingStar} /> {props.rate}</p></div>
+              </div>
+              <p className={classes.pricetag}>${props.price}</p>
+              <div><h2>
+                  <button className={classes.heart}><FontAwesomeIcon className={classes.carticon} icon={faHeartCircleCheck} /></button>
+                  <button className={classes.cart}><FontAwesomeIcon className={classes.carticon} icon={faCartShopping} /></button>
+                  </h2>
+              </div>
         </li>
         </div>
   )
 }
 
-export default Books
+export default Foods

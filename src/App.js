@@ -1,33 +1,59 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react'
-import {Nav,Container,Navbar,NavDropdown} from 'react-bootstrap'
+import React, {useState,useEffect,useCallback} from 'react'
 
 import BooksList from './components/BooksList'
 
 function App() {
+const [foods, setFoods] = useState([])
+const [isLoading, setLoading] = useState(false)
+const [show, setShow] = useState(true)
+const [foodtype, setFoodtype] = useState('best-foods')
 
+const fetchMoviesHandler = useCallback( async () => {
+  setLoading(true);
+  try {
+      const response = await fetch(`https://ig-food-menus.herokuapp.com/${foodtype}`);
+      if(!response.ok){
+          throw new Error(response.status);
+      }
+      console.log(response)
+      const data = await response.json();
 
-const booksElements = [
-  {
-    id: 1,
-    title: 'teszt1',
-    date: '1970-02-02',
-    pages: '100'
-  },
-  {
-    id: 2,
-    title: 'teszt2',
-    date: '1972-08-22',
-    pages: '250'
-  },
-  {
-    id: 3,
-    title: 'teszt3',
-    date: '2004-01-14',
-    pages: '800'
+      console.log(data);
+
+      // const movieselement = data.result.map((movie) => {
+      //     return ([{
+      //         id: movie.id,
+      //         title: movie.title,
+      //         openingText: movie.openingText,
+      //         releaseDate: movie.releaseDate,
+      //     }]);
+      // });
+
+      const foodselements = [];
+
+      for (const key in data) {
+        foodselements.push({
+              id: key,
+              name: data[key].name,
+              img: data[key].img,
+              price: data[key].price,
+              rate: data[key].rate,
+          });
+      }
+
+      setFoods(foodselements);
+
+  }catch (e){
+      console.log(e);
   }
-]
+  setLoading(false);
+}, [])
+
+useEffect(() => {
+  fetchMoviesHandler();
+}, [foodtype]);
 
 
   return (
@@ -40,8 +66,19 @@ const booksElements = [
           </div>
       </section>
       <section>
-        <BooksList books={booksElements}/>
-      </section>
+                <button className="btn-lg mx-4 btn-primary" onClick={fetchMoviesHandler}>Fetch Movies</button>
+                <button className="btn-lg mx-4 btn-primary" onClick={() => setShow(!show)}>Show/Hide</button>
+            </section>
+            <section>
+            <button className="btn mx-2  btn-success" onClick={() => setFoodtype('burgers')}>Hamburger</button>
+            <button className="btn mx-2  btn-success" onClick={() => setFoodtype('drinks')}>Drinks</button>
+            <button className="btn mx-2  btn-success" onClick={() => setFoodtype('pizzas')}>Pizza</button>
+            </section>
+            <section>
+                {foodtype &&show && !isLoading && foods.length > 0 && <BooksList foods={foods}/>}
+                {show && !isLoading && foods.length === 0 && <p>Found no movies</p>}
+                {isLoading && <p>Loading...</p>}
+            </section>
     </React.Fragment>
   );
 }
