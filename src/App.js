@@ -59,17 +59,18 @@ useEffect(() => {
 
   return (
     <React.Fragment>
-      <section>
+      {/* <section>
           <div className="App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
             </header>
           </div>
-      </section>
+      </section> */}
       <div className='nav'>
         <div className="container">
         <div className="row">
           <h1>Our Foods</h1>
+          <img src={logo} className="App-logo" alt="logo" />  
         </div>
         <div className="d-inline col-12">
         <section>
@@ -77,9 +78,9 @@ useEffect(() => {
           <button className="btn-lg mx-2 btn-primary" onClick={() => setShow(!show)}>Show/Hide</button>
         </section>
         <section>
-          <button className="btn-lg mx-2  btn-success" onClick={() => setFoodtype('burgers')}>Hamburger</button>
-          <button className="btn-lg mx-2  btn-success" onClick={() => setFoodtype('drinks')}>Drinks</button>
-          <button className="btn-lg mx-2  btn-success" onClick={() => setFoodtype('pizzas')}>Pizza</button>
+          <button className="btn mx-2  btn-success" onClick={() => setFoodtype('burgers')}>Hamburger</button>
+          <button className="btn mx-2  btn-success" onClick={() => setFoodtype('drinks')}>Drinks</button>
+          <button className="btn mx-2  btn-success" onClick={() => setFoodtype('pizzas')}>Pizza</button>
         </section>
         </div>
         </div>

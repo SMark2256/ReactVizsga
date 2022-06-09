@@ -1,6 +1,6 @@
 
 .App-logo {
-  height: 6vh;
+  height: 10vh;
   pointer-events: none;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .nav{
-  height: 350px;
+  height: 400px;
   justify-content: center;
   background-color: rgba(20, 20, 60, 0.1);
   border-bottom: 3px solid;
