@@ -1,11 +1,11 @@
 li{
-      background-color: rgba(60, 40, 60, 0.06);
+      background-color: rgba(60, 40, 60, 0.08);
+      opacity: 1;
       border-radius: 8px;
       padding: 5px;
-      margin: 0px;
-      min-height: 370px;
+      min-height: 3.7vh;
       font-size: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 2vh;
 }
 
 .pricetag{
@@ -15,8 +15,8 @@ li{
 }
 
 li h2{
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 1vh;
+      margin-right: 1vh;
       color: brown;
       text-align: center;
       pointer-events: none;
@@ -34,23 +34,26 @@ li p{
 
 .rankingstar div{
       position: absolute;
-      padding-right: 30%;
       font-size: 20px;
       z-index: 2;
-      top: 170px; 
+      top: 1vh; 
       left: 4.2%; 
       width: 100%; 
 }
 
+.rankingstar img{
+      border-radius: 20px;
+}
+
 .rankingstaricon{
-      background-color: rgba(20, 20, 20, 0.3);
-      width: 60px;
+      background-color: rgba(20, 20, 20, 0.7);
+      width: 6vh; 
 }
 
 .heart{
       background-image: linear-gradient(90deg, rgba(9,120,220,1) 35%, rgba(0,212,255,1) 100%);
-      width: 60px;
-      height: 35px;
+      width: 6vh;
+      height: 3.5vh;
       border: 0px;
       border-radius: 10px;
       
@@ -63,8 +66,8 @@ li p{
 
 .cart{
       background-image: linear-gradient(90deg, rgba(9,120,220,1) 35%, rgba(0,212,255,1) 100%);
-      width: 60px;
-      height: 35px;
+      width: 6vh;
+      height: 3.5vh;
       border: 0px;
       border-radius: 10px;
       margin-left: 30%;
@@ -75,6 +78,10 @@ li p{
       pointer-events: fill;
 }
 
+.iconbuttons{
+      margin-top: 5vh;
+      margin-bottom: -5px;
+}
 
 @media screen and (max-width: 1193px) {
       li{
